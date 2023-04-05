@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="userUI.controllers.market">
+   <left>
+      <VBox prefHeight="500.0" prefWidth="236.0" styleClass="violet" stylesheets="@../main/style.css" BorderPane.alignment="CENTER">
+         <children>
+            <Label contentDisplay="CENTER" prefHeight="47.0" prefWidth="110.0" styleClass="selectPlan" stylesheets="@../main/style.css" text="Select Plan" textAlignment="CENTER" VBox.vgrow="ALWAYS">
+               <VBox.margin>
+                  <Insets left="65.0" top="10.0" />
+               </VBox.margin>
+               <font>
+                  <Font name="Times New Roman" size="20.0" />
+               </font>
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+            </Label>
+            <VBox fx:id="choosenPlanCard" prefHeight="387.0" prefWidth="216.0" styleClass="innerBox" stylesheets="@../main/style.css">
+               <VBox.margin>
+                  <Insets bottom="15.0" left="13.0" right="10.0" top="10.0" />
+               </VBox.margin>
+               <padding>
+                  <Insets top="5.0" />
+               </padding>
+               <children>
+                  <Label fx:id="planNameLabel" alignment="CENTER" contentDisplay="CENTER" prefHeight="44.0" prefWidth="110.0" styleClass="planTitle" stylesheets="@../main/style.css" textAlignment="CENTER" VBox.vgrow="ALWAYS">
+                     <font>
+                        <Font name="Times New Roman" size="20.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets left="55.0" />
+                     </VBox.margin>
+                  </Label>
+                  <ImageView fx:id="planImage" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../images/floppy-disk-solid.png" />
+                     </image>
+                     <VBox.margin>
+                        <Insets left="45.0" top="15.0" />
+                     </VBox.margin>
+                  </ImageView>
+                  <HBox prefHeight="26.0" prefWidth="216.0">
+                     <children>
+                        <Label prefHeight="17.0" prefWidth="112.0" text="Lot Price:" HBox.hgrow="ALWAYS">
+                           <font>
+                              <Font name="Times New Roman" size="20.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="planLotPriceLabel" prefHeight="17.0" prefWidth="112.0" HBox.hgrow="ALWAYS">
+                           <font>
+                              <Font name="Times New Roman" size="20.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <VBox.margin>
+                        <Insets left="5.0" right="5.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox prefHeight="26.0" prefWidth="216.0">
+                     <children>
+                        <Label prefHeight="17.0" prefWidth="112.0" text="PCF:" HBox.hgrow="ALWAYS">
+                           <font>
+                              <Font name="Times New Roman" size="20.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="pcfLabel" prefHeight="17.0" prefWidth="112.0" HBox.hgrow="ALWAYS">
+                           <font>
+                              <Font name="Times New Roman" size="20.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <VBox.margin>
+                        <Insets left="5.0" right="5.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox prefHeight="26.0" prefWidth="216.0">
+                     <children>
+                        <Label prefHeight="17.0" prefWidth="112.0" text="VAT:" HBox.hgrow="ALWAYS">
+                           <font>
+                              <Font name="Times New Roman" size="20.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="vatLabel" prefHeight="17.0" prefWidth="112.0" HBox.hgrow="ALWAYS">
+                           <font>
+                              <Font name="Times New Roman" size="20.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <VBox.margin>
+                        <Insets left="5.0" right="5.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox prefHeight="26.0" prefWidth="216.0">
+                     <children>
+                        <Label prefHeight="23.0" prefWidth="110.0" text="Selling Price:" HBox.hgrow="ALWAYS">
+                           <font>
+                              <Font name="Times New Roman" size="18.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="planSellingPriceLabel" prefHeight="17.0" prefWidth="112.0" HBox.hgrow="ALWAYS">
+                           <font>
+                              <Font name="Times New Roman" size="20.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <VBox.margin>
+                        <Insets left="5.0" right="5.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <Button fx:id="selectButton" mnemonicParsing="false" prefHeight="43.0" prefWidth="114.0" styleClass="selectButton" stylesheets="@../main/style.css" text="Select">
+                           <font>
+                              <Font name="Times New Roman" size="27.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+      </VBox>
+   </left>
+   <center>
+      <HBox prefHeight="100.0" prefWidth="200.0" styleClass="backScroll" stylesheets="@../main/style.css" BorderPane.alignment="CENTER">
+         <children>
+            <ScrollPane fx:id="scroll" prefHeight="456.0" prefWidth="464.0" styleClass="transparent">
+               <HBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </HBox.margin>
+               <content>
+                  <AnchorPane prefHeight="485.0" prefWidth="448.0" styleClass="transparent">
+                     <children>
+                        <AnchorPane fx:id="oneBox" layoutX="38.0" layoutY="33.0" onMouseClicked="#getButtonChoose" prefHeight="89.0" prefWidth="173.0">
+                           <children>
+                              <Label fx:id="nameOne" alignment="CENTER" layoutX="4.0" layoutY="14.0" prefHeight="23.0" prefWidth="164.0" styleClass="beige" text="Regular">
+                                 <font>
+                                    <Font name="Times New Roman" size="20.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="priceOne" layoutX="59.0" layoutY="45.0" styleClass="beige" text="₱16560">
+                                 <font>
+                                    <Font name="Times New Roman" size="20.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <styleClass>
+                              <String fx:value="violet" />
+                              <String fx:value="shadow" />
+                              <String fx:value="thisButton" />
+                              <String fx:value="roundcorner" />
+                           </styleClass>
+                        </AnchorPane>
+                        <AnchorPane fx:id="twoBox" layoutX="237.0" layoutY="33.0" onMouseClicked="#getButtonChoose" prefHeight="89.0" prefWidth="173.0">
+                           <children>
+                              <Label fx:id="nameTwo" alignment="CENTER" layoutX="3.0" layoutY="14.0" prefHeight="23.0" prefWidth="166.0" styleClass="beige" text="Inner Walk">
+                                 <font>
+                                    <Font name="Times New Roman" size="20.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="priceTwo" layoutX="59.0" layoutY="45.0" styleClass="beige" text="₱20256">
+                                 <font>
+                                    <Font name="Times New Roman" size="20.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <styleClass>
+                              <String fx:value="violet" />
+                              <String fx:value="shadow" />
+                              <String fx:value="thisButton" />
+                              <String fx:value="roundcorner" />
+                           </styleClass>
+                        </AnchorPane>
+                        <AnchorPane fx:id="threeBox" layoutX="38.0" layoutY="159.0" onMouseClicked="#getButtonChoose" prefHeight="89.0" prefWidth="173.0">
+                           <children>
+                              <Label fx:id="nameThree" alignment="CENTER" layoutX="3.0" layoutY="14.0" prefHeight="23.0" prefWidth="167.0" styleClass="beige" text="Walk">
+                                 <font>
+                                    <Font name="Times New Roman" size="20.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="priceThree" layoutX="56.0" layoutY="45.0" styleClass="beige" text="₱22104">
+                                 <font>
+                                    <Font name="Times New Roman" size="20.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <styleClass>
+                              <String fx:value="violet" />
+                              <String fx:value="shadow" />
+                              <String fx:value="thisButton" />
+                              <String fx:value="roundcorner" />
+                           </styleClass>
+                        </AnchorPane>
+                        <AnchorPane fx:id="fourBox" layoutX="237.0" layoutY="159.0" onMouseClicked="#getButtonChoose" prefHeight="89.0" prefWidth="173.0">
+                           <children>
+                              <Label fx:id="nameFour" alignment="CENTER" layoutX="4.0" layoutY="14.0" prefHeight="23.0" prefWidth="164.0" styleClass="beige" text="Inner Drive">
+                                 <font>
+                                    <Font name="Times New Roman" size="20.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="priceFour" layoutX="56.0" layoutY="45.0" styleClass="beige" text="₱22104">
+                                 <font>
+                                    <Font name="Times New Roman" size="20.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <styleClass>
+                              <String fx:value="violet" />
+                              <String fx:value="shadow" />
+                              <String fx:value="thisButton" />
+                              <String fx:value="roundcorner" />
+                           </styleClass>
+                        </AnchorPane>
+                        <AnchorPane fx:id="fiveBox" layoutX="38.0" layoutY="286.0" onMouseClicked="#getButtonChoose" prefHeight="89.0" prefWidth="173.0">
+                           <children>
+                              <Label fx:id="nameFive" alignment="CENTER" layoutX="4.0" layoutY="14.0" prefHeight="23.0" prefWidth="166.0" styleClass="beige" text="Drive">
+                                 <font>
+                                    <Font name="Times New Roman" size="20.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="priceFive" layoutX="57.0" layoutY="45.0" styleClass="beige" text="₱23800">
+                                 <font>
+                                    <Font name="Times New Roman" size="20.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <styleClass>
+                              <String fx:value="violet" />
+                              <String fx:value="shadow" />
+                              <String fx:value="thisButton" />
+                              <String fx:value="roundcorner" />
+                           </styleClass>
+                        </AnchorPane>
+                        <Button layoutX="298.0" layoutY="318.0" mnemonicParsing="false" onAction="#toFront" text="Back" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </ScrollPane>
+         </children>
+      </HBox>
+   </center>
+</BorderPane>

@@ -1,0 +1,36 @@
+.planButton{
+  -fx-background-color: #F5EDCE;
+  -fx-background-radius: 7px;}
+
+
+#buttomAnchor{
+    -fx-background-color: #F5EDCE;
+}
+
+#leftAnchor{
+    -fx-background-color: #2D033B;
+}
+
+#rightAnchor{
+    -fx-background-color: #F5EDCE;
+}
+
+.button{
+  -fx-background-color: #2D033B;
+  -fx-background-radius: 7px;
+  -fx-text-fill: "white";
+
+}
+.button:hover{
+  -fx-background-color: #810CA8;
+}
+
+.text-field {
+  -fx-background-color: transparent;
+  -fx-border-color: transparent transparent #2D033B transparent;
+}
+
+.label{
+    -fx-text-fill:#2D033B;
+}
+

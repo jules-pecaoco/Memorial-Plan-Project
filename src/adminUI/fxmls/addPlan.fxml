@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="adminUI.controllers.addPlan">
+   <top>
+      <AnchorPane prefHeight="61.0" prefWidth="400.0" style="-fx-background-color: #2D033B;" BorderPane.alignment="CENTER">
+         <children>
+            <Label fx:id="titleLabel" layoutX="123.0" layoutY="9.0" prefHeight="44.0" prefWidth="154.0" text="Add Plan" textFill="WHITE">
+               <font>
+                  <Font name="Times New Roman" size="39.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </top>
+   <center>
+      <AnchorPane prefHeight="171.0" prefWidth="277.0" BorderPane.alignment="CENTER">
+         <children>
+            <TextField fx:id="categoryField" layoutX="14.0" layoutY="23.0" stylesheets="@../main/style.css" />
+            <TextField fx:id="lotPriceField" layoutX="14.0" layoutY="59.0" stylesheets="@../main/style.css" />
+            <TextField fx:id="pcfField" layoutX="14.0" layoutY="94.0" stylesheets="@../main/style.css" />
+            <TextField fx:id="vatField" layoutX="14.0" layoutY="131.0" stylesheets="@../main/style.css" />
+            <Label fx:id="messageLabel" layoutX="-9.0" layoutY="5.0" prefHeight="17.0" prefWidth="136.0" textFill="RED" />
+         </children>
+      </AnchorPane>
+   </center>
+   <left>
+      <AnchorPane prefHeight="171.0" prefWidth="108.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="18.0" layoutY="26.0" text="Category Name:">
+               <font>
+                  <Font name="Times New Roman" size="19.0" />
+               </font>
+            </Label>
+            <Label layoutX="18.0" layoutY="63.0" text="Lot Price:">
+               <font>
+                  <Font name="Times New Roman" size="19.0" />
+               </font>
+            </Label>
+            <Label layoutX="17.0" layoutY="98.0" text="PCF:">
+               <font>
+                  <Font name="Times New Roman" size="19.0" />
+               </font>
+            </Label>
+            <Label layoutX="15.0" layoutY="135.0" text="VAT:">
+               <font>
+                  <Font name="Times New Roman" size="19.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </left>
+   <bottom>
+      <AnchorPane prefHeight="68.0" prefWidth="400.0" style="-fx-background-color: #F5EDCE;" BorderPane.alignment="CENTER">
+         <children>
+            <Button layoutX="312.0" layoutY="22.0" mnemonicParsing="false" onAction="#saveInput" prefHeight="30.0" prefWidth="54.0" stylesheets="@../main/style.css" text="Save" />
+            <Button layoutX="250.0" layoutY="22.0" mnemonicParsing="false" onAction="#backOnClick" prefHeight="30.0" prefWidth="54.0" stylesheets="@../main/style.css" text="Back" />
+         </children>
+      </AnchorPane>
+   </bottom>
+</BorderPane>

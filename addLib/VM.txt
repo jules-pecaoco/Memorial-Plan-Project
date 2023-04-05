@@ -1,0 +1,1 @@
+--module-path "C:\Users\ACER\Documents\Code\javafx-sdk-19.0.2.1\lib" --add-modules javafx.controls,javafx.fxml 

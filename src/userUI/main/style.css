@@ -1,0 +1,66 @@
+.violet{
+    -fx-background-color: #2D033B;
+}
+
+.beigeButton{
+    -fx-background-color: #F5EDCE;
+}
+
+.beige{
+    -fx-text-fill:#F5EDCE;
+}
+
+.roundcorner{
+    -fx-background-radius:25;
+}
+
+.circle{
+    -fx-background-radius:2100;
+}
+
+.shadow{
+    -fx-effect: dropShadow(three-pass-box,rgba(0,0,0,0.2), 0.0 , 0.0 , 5 ,5);
+}
+
+.transparent{
+    -fx-background-color: #E5B8F4;
+}
+
+.selectPlan{
+    -fx-background-color: #F5EDCE;
+    -fx-background-radius: 25;
+}
+
+.innerBox{
+    -fx-background-color:#F5EDCE;
+    -fx-background-radius:25;
+}
+
+.planTitle{
+    -fx-background-color: #2D033B;
+    -fx-background-radius: 25;
+    -fx-text-fill: #F5EDCE;
+}
+
+.selectButton{
+    -fx-background-color: #2D033B;
+    -fx-background-radius: 25;
+    -fx-text-fill: #F5EDCE;
+}
+
+.selectButton:hover{
+    -fx-background-color: #810CA8;
+}
+
+.thisButton:hover{
+    -fx-background-color: #810CA8;
+}
+
+.thisButton:pressed{
+    -fx-background-radius: 40;
+}
+
+
+.backScroll{
+    -fx-background-color: #2D033B;
+}
