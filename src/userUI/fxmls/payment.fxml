@@ -1,14 +1,296 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="userUI.controllers.payment"
-            prefHeight="400.0" prefWidth="600.0">
-
-</AnchorPane>
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="userUI.controllers.payment">
+    <left>
+      <AnchorPane BorderPane.alignment="CENTER">
+         <children>
+              <VBox prefHeight="500.0" prefWidth="236.0" styleClass="violet" stylesheets="@../main/style.css">
+                  <children>
+                  <AnchorPane prefHeight="499.0" prefWidth="238.0">
+                     <children>
+                        <VBox fx:id="paymentCard" layoutX="11.0" layoutY="69.0" prefHeight="387.0" prefWidth="216.0" styleClass="innerBox" stylesheets="@../main/style.css">
+                           <padding>
+                              <Insets top="5.0" />
+                           </padding>
+                           <children>
+                              <Label fx:id="paymentTitle" alignment="CENTER" contentDisplay="CENTER" prefHeight="44.0" prefWidth="115.0" styleClass="planTitle" stylesheets="@../main/style.css" textAlignment="CENTER" VBox.vgrow="ALWAYS">
+                                 <font>
+                                    <Font name="Times New Roman" size="20.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets left="55.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <HBox alignment="CENTER" prefHeight="39.0" prefWidth="216.0">
+                                 <children>
+                                    <Label fx:id="warningLabel" alignment="CENTER" contentDisplay="CENTER" prefHeight="17.0" prefWidth="219.0" textAlignment="CENTER" textFill="RED" />
+                                 </children>
+                              </HBox>
+                              <HBox prefHeight="26.0" prefWidth="216.0">
+                                 <children>
+                                    <Label fx:id="downOrAmountTitle" prefHeight="23.0" prefWidth="173.0" text="Down Payment:" HBox.hgrow="ALWAYS">
+                                       <font>
+                                          <Font name="Times New Roman" size="20.0" />
+                                       </font>
+                                       <HBox.margin>
+                                          <Insets left="5.0" top="10.0" />
+                                       </HBox.margin>
+                                    </Label>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
+                              </HBox>
+                              <HBox alignment="CENTER" prefHeight="26.0" prefWidth="216.0">
+                                 <children>
+                                    <TextField fx:id="downOrAmountField" alignment="CENTER" promptText="Input Amount" />
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
+                              </HBox>
+                              <HBox fx:id="yearTitleBox" prefHeight="26.0" prefWidth="216.0">
+                                 <children>
+                                    <Label fx:id="yearTitle" prefHeight="17.0" prefWidth="112.0" text="Year:" HBox.hgrow="ALWAYS">
+                                       <font>
+                                          <Font name="Times New Roman" size="20.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets left="5.0" right="5.0" />
+                                 </VBox.margin>
+                              </HBox>
+                              <HBox fx:id="yearFieldBox" alignment="CENTER" prefHeight="26.0" prefWidth="216.0">
+                                 <children>
+                                    <TextField fx:id="yearField" alignment="CENTER" promptText="Input Year/s" />
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER" prefHeight="41.0" prefWidth="216.0">
+                                 <children>
+                                    <Button fx:id="calculateButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#toCalculate" text="Calculate">
+                                       <styleClass>
+                                          <String fx:value="roundcorner" />
+                                          <String fx:value="selectButton" />
+                                          <String fx:value="violet" />
+                                          <String fx:value="beige" />
+                                       </styleClass>
+                                       <font>
+                                          <Font name="Times New Roman" size="12.0" />
+                                       </font>
+                                    </Button>
+                                 </children>
+                              </HBox>
+                              <HBox prefHeight="26.0" prefWidth="216.0">
+                                 <children>
+                                    <Label fx:id="contracOrSellPrice" prefHeight="23.0" prefWidth="155.0" text="Contract Price:" HBox.hgrow="ALWAYS">
+                                       <font>
+                                          <Font name="Times New Roman" size="18.0" />
+                                       </font>
+                                       <HBox.margin>
+                                          <Insets top="5.0" />
+                                       </HBox.margin>
+                                    </Label>
+                                    <Label fx:id="contractOrSellPriceLabel" prefHeight="17.0" prefWidth="112.0" HBox.hgrow="ALWAYS">
+                                       <font>
+                                          <Font name="Times New Roman" size="20.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets left="5.0" right="5.0" />
+                                 </VBox.margin>
+                              </HBox>
+                              <HBox prefHeight="26.0" prefWidth="216.0">
+                                 <children>
+                                    <Label fx:id="interestOrOffTitle" prefHeight="23.0" prefWidth="110.0" text="Interest:" HBox.hgrow="ALWAYS">
+                                       <font>
+                                          <Font name="Times New Roman" size="18.0" />
+                                       </font>
+                                       <HBox.margin>
+                                          <Insets top="5.0" />
+                                       </HBox.margin>
+                                    </Label>
+                                    <Label fx:id="interestorOffLabel" prefHeight="17.0" prefWidth="112.0" HBox.hgrow="ALWAYS">
+                                       <font>
+                                          <Font name="Times New Roman" size="20.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets left="5.0" right="5.0" />
+                                 </VBox.margin>
+                              </HBox>
+                              <HBox prefHeight="26.0" prefWidth="216.0">
+                                 <children>
+                                    <Label fx:id="monthlyOrChangeTitle" prefHeight="17.0" prefWidth="112.0" text="Monthly:" HBox.hgrow="ALWAYS">
+                                       <font>
+                                          <Font name="Times New Roman" size="18.0" />
+                                       </font>
+                                       <HBox.margin>
+                                          <Insets top="5.0" />
+                                       </HBox.margin>
+                                    </Label>
+                                    <Label fx:id="monthlyOrChangeLabel" prefHeight="17.0" prefWidth="112.0" HBox.hgrow="ALWAYS">
+                                       <font>
+                                          <Font name="Times New Roman" size="20.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets left="5.0" />
+                                 </VBox.margin>
+                              </HBox>
+                              <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                                 <children>
+                                    <Button fx:id="selectButton" mnemonicParsing="false" prefHeight="43.0" prefWidth="114.0" stylesheets="@../main/style.css" text="Select">
+                                       <font>
+                                          <Font name="Times New Roman" size="27.0" />
+                                       </font>
+                                       <styleClass>
+                                          <String fx:value="violet" />
+                                          <String fx:value="shadow" />
+                                          <String fx:value="selectButton" />
+                                          <String fx:value="roundcorner" />
+                                       </styleClass>
+                                    </Button>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                            <Label contentDisplay="CENTER" layoutX="47.0" layoutY="14.0" prefHeight="47.0" prefWidth="143.0" styleClass="selectPlan" stylesheets="@../main/style.css" text="Select Payment" textAlignment="CENTER">
+                                <font>
+                                    <Font name="Times New Roman" size="20.0" />
+                                </font>
+                                <padding>
+                                    <Insets left="10.0" />
+                                </padding>
+                            </Label>
+                     </children>
+                  </AnchorPane>
+                  </children>
+              </VBox>
+         </children>
+      </AnchorPane>
+    </left>
+    <center>
+        <HBox prefHeight="100.0" prefWidth="200.0" styleClass="backScroll" stylesheets="@../main/style.css" BorderPane.alignment="CENTER">
+            <children>
+                <ScrollPane fx:id="scroll" prefHeight="456.0" prefWidth="464.0" styleClass="transparent">
+                    <HBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                    </HBox.margin>
+                    <content>
+                        <AnchorPane prefHeight="485.0" prefWidth="448.0" styleClass="transparent">
+                            <children>
+                                <AnchorPane fx:id="oneBox" layoutX="38.0" layoutY="89.0" onMouseClicked="#setPaymentCard" prefHeight="89.0" prefWidth="173.0">
+                                    <children>
+                                        <Label fx:id="nameOne" alignment="CENTER" layoutX="4.0" layoutY="14.0" prefHeight="23.0" prefWidth="164.0" styleClass="beige" text="Spot Cash">
+                                            <font>
+                                                <Font name="Times New Roman" size="20.0" />
+                                            </font>
+                                        </Label>
+                                        <Label layoutX="59.0" layoutY="45.0" styleClass="beige" text="15% Off">
+                                            <font>
+                                                <Font name="Times New Roman" size="20.0" />
+                                            </font>
+                                        </Label>
+                                    </children>
+                                    <styleClass>
+                                        <String fx:value="violet" />
+                                        <String fx:value="shadow" />
+                                        <String fx:value="thisButton" />
+                                        <String fx:value="roundcorner" />
+                                    </styleClass>
+                                </AnchorPane>
+                                <AnchorPane fx:id="twoBox" layoutX="237.0" layoutY="89.0" onMouseClicked="#setPaymentCard" prefHeight="89.0" prefWidth="173.0">
+                                    <children>
+                                        <Label fx:id="nameTwo" alignment="CENTER" layoutX="3.0" layoutY="14.0" prefHeight="23.0" prefWidth="166.0" styleClass="beige" text="60 Days">
+                                            <font>
+                                                <Font name="Times New Roman" size="20.0" />
+                                            </font>
+                                        </Label>
+                                        <Label layoutX="51.0" layoutY="45.0" styleClass="beige" text="10% Off">
+                                            <font>
+                                                <Font name="Times New Roman" size="20.0" />
+                                            </font>
+                                        </Label>
+                                    </children>
+                                    <styleClass>
+                                        <String fx:value="violet" />
+                                        <String fx:value="shadow" />
+                                        <String fx:value="thisButton" />
+                                        <String fx:value="roundcorner" />
+                                    </styleClass>
+                                </AnchorPane>
+                                <AnchorPane fx:id="threeBox" layoutX="38.0" layoutY="215.0" onMouseClicked="#setPaymentCard" prefHeight="89.0" prefWidth="173.0">
+                                    <children>
+                                        <Label fx:id="nameThree" alignment="CENTER" layoutX="3.0" layoutY="14.0" prefHeight="23.0" prefWidth="167.0" styleClass="beige" text="30 Days">
+                                            <font>
+                                                <Font name="Times New Roman" size="20.0" />
+                                            </font>
+                                        </Label>
+                                        <Label layoutX="56.0" layoutY="45.0" styleClass="beige" text="5% Off">
+                                            <font>
+                                                <Font name="Times New Roman" size="20.0" />
+                                            </font>
+                                        </Label>
+                                    </children>
+                                    <styleClass>
+                                        <String fx:value="violet" />
+                                        <String fx:value="shadow" />
+                                        <String fx:value="thisButton" />
+                                        <String fx:value="roundcorner" />
+                                    </styleClass>
+                                </AnchorPane>
+                                <AnchorPane fx:id="fourBox" layoutX="237.0" layoutY="215.0" onMouseClicked="#setPaymentCard" prefHeight="89.0" prefWidth="173.0">
+                                    <children>
+                                        <Label fx:id="nameFour" alignment="CENTER" layoutX="4.0" layoutY="14.0" prefHeight="23.0" prefWidth="164.0" styleClass="beige" text="Installments">
+                                            <font>
+                                                <Font name="Times New Roman" size="20.0" />
+                                            </font>
+                                        </Label>
+                                        <Label fx:id="priceFour" layoutX="59.0" layoutY="45.0" styleClass="beige" text="Promo">
+                                            <font>
+                                                <Font name="Times New Roman" size="20.0" />
+                                            </font>
+                                        </Label>
+                                    </children>
+                                    <styleClass>
+                                        <String fx:value="violet" />
+                                        <String fx:value="shadow" />
+                                        <String fx:value="thisButton" />
+                                        <String fx:value="roundcorner" />
+                                    </styleClass>
+                                </AnchorPane>
+                                <Button layoutX="324.0" layoutY="381.0" mnemonicParsing="false" onAction="#toMarket" text="Back" />
+                        <Label fx:id="selectedPlan" alignment="CENTER" contentDisplay="CENTER" layoutX="53.0" layoutY="14.0" prefHeight="47.0" prefWidth="143.0" styleClass="selectPlan" stylesheets="@../main/style.css" text="Plan" textAlignment="CENTER">
+                           <font>
+                              <Font name="Times New Roman" size="20.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="selectedPrice" alignment="CENTER" contentDisplay="CENTER" layoutX="252.0" layoutY="14.0" prefHeight="47.0" prefWidth="143.0" styleClass="selectPlan" stylesheets="@../main/style.css" text="Price" textAlignment="CENTER">
+                           <font>
+                              <Font name="Times New Roman" size="20.0" />
+                           </font>
+                        </Label>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </ScrollPane>
+            </children>
+        </HBox>
+    </center>
+</BorderPane>

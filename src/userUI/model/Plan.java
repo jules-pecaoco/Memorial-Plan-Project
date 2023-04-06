@@ -10,30 +10,14 @@ import java.sql.Statement;
 public class Plan {
 
 
-    String color;
-
-    String imgscr;
 
     databaseConnect connect = new databaseConnect();
     Connection connectData = connect.getDatabaseLink();
     String query;
 
     int idPromoPlan;
-    public String getImgscr() {
-        return imgscr;
-    }
 
-    public void setImgscr(String imgscr) {
-        this.imgscr = imgscr;
-    }
 
-    public void setColor(String color) {
-        this.color = color;
-    }
-
-    public String getColor() {
-        return color;
-    }
 
 
 
@@ -68,6 +52,7 @@ public class Plan {
         }
         return categoryName;
     }
+
     public int getVAT(){
         int vat = 0;
         query =  "SELECT VAT FROM promoplan WHERE idpromoplan = '"+idPromoPlan+"'";
@@ -121,5 +106,80 @@ public class Plan {
     public int getSellingPrice(){
         return getVATPrice()+getPCF()+getLotPrice();
     }
+
+
+
+    int year;
+    public void setYear(int year){
+        this.year = year;
+    }
+
+    public int getYear(){
+        return year;
+    }
+
+    int downPayment;
+
+    public void setDownPayment(int downPayment){
+        this.downPayment = downPayment;
+    }
+
+    public int getDownPayment(){
+        return downPayment;
+    }
+
+    public int getInterest(){
+        int interest = 0;
+        if(getYear()>5){
+            interest = 60;
+        }
+        switch (getYear()){
+            case 1 -> interest = 15;
+            case 2 -> interest = 20;
+            case 3 -> interest = 30;
+            case 4 -> interest = 40;
+            case 5 -> interest = 50;
+        }
+        return interest;
+    }
+
+
+
+    public int getBalancePrice(){
+        return getSellingPrice() - getDownPayment();
+    }
+    public int getCalculatedInterest(){
+        double interest = getInterest()/100.0;
+        return (int) Math.round(getBalancePrice()*interest);
+    }
+
+    public int getContractPrice(){
+        return getSellingPrice()+getCalculatedInterest();
+    }
+
+    public int getMonthlyPayment(){
+        return (getBalancePrice()+getCalculatedInterest())/(getYear()*12);
+    }
+
+
+    //Spot Cash
+    int spotDiscount;
+    public void setSpotDiscount(int spotDiscount){
+        this.spotDiscount = spotDiscount;
+    }
+
+    public int getSpotDiscount(){
+        return spotDiscount;
+    }
+
+    public int getSpotPrice(){
+        double discount = getSpotDiscount()/100.0;
+        int price = (int) (getSellingPrice() * discount);
+        int spotPrice = getSellingPrice() -price;
+
+        return spotPrice;
+    }
+
+
 
 }

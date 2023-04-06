@@ -10,7 +10,6 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
@@ -21,6 +20,8 @@ import userUI.model.Plan;
 import java.net.URL;
 import java.util.ResourceBundle;
 import userUI.main.*;
+
+import javax.swing.*;
 
 public class market implements Initializable{
 
@@ -99,12 +100,20 @@ public class market implements Initializable{
     @FXML
     private AnchorPane oneBox;
 
+    @FXML
+    private Label warningMessage;
+
+    Parent root;
+    Stage stage;
+    Scene scene;
+
     Plan plan1 = new Plan();
     Plan plan2 = new Plan();
     Plan plan3 = new Plan();
     Plan plan4 = new Plan();
     Plan plan5 = new Plan();
 
+    Plan selectedPlan;
     public void setChosenPlan(Plan plan){
         planNameLabel.setText(plan.getCategoryName());
         planLotPriceLabel.setText(mainUser.Currency + plan.getLotPrice());
@@ -115,17 +124,24 @@ public class market implements Initializable{
 
 
     public void getButtonChoose(MouseEvent e){
+        warningMessage.setText(null);
         if(e.getSource()==oneBox){
             setChosenPlan(plan1);
+            selectedPlan = plan1;
         } else if (e.getSource()==twoBox) {
             setChosenPlan(plan2);
+            selectedPlan = plan2;
         } else if (e.getSource()==threeBox) {
             setChosenPlan(plan3);
+            selectedPlan = plan3;
         } else if (e.getSource()==fourBox) {
             setChosenPlan(plan4);
+            selectedPlan = plan4;
         }else {
             setChosenPlan(plan5);
+            selectedPlan = plan5;
         }
+
     }
 
 
@@ -164,13 +180,37 @@ public class market implements Initializable{
 
     public void toFront(ActionEvent e){
         try {
-            Parent root = FXMLLoader.load(getClass().getResource("/userUI/fxmls/home.fxml"));
-            Scene scene = new Scene(root);
-            Stage stage = (Stage) ((Node)e.getSource()).getScene().getWindow();
+            root = FXMLLoader.load(getClass().getResource("/userUI/fxmls/home.fxml"));
+            scene = new Scene(root);
+
+            stage = (Stage) ((Node)e.getSource()).getScene().getWindow();
             stage.setScene(scene);
         }catch (Exception ex){
             ex.printStackTrace();
         }
+    }
+
+
+    public void toPayment(ActionEvent e){
+        if(selectedPlan==null){
+            warningMessage.setText("Select a Plan to Proceed");
+        }else {
+            try{
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/userUI/fxmls/payment.fxml"));
+                root = loader.load();
+
+                payment setID  = loader.getController();
+                setID.setID(selectedPlan);
+
+                stage = (Stage)((Node)e.getSource()).getScene().getWindow();
+                scene = new Scene(root);
+                stage.setScene(scene);
+                stage.show();
+            }catch (Exception ex){
+                ex.printStackTrace();
+            }
+        }
+
     }
 
 

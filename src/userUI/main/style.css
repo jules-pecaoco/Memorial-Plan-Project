@@ -2,6 +2,11 @@
     -fx-background-color: #2D033B;
 }
 
+.text-field{
+  -fx-background-color: transparent;
+  -fx-border-color: transparent transparent #2D033B transparent;
+}
+
 .beigeButton{
     -fx-background-color: #F5EDCE;
 }
@@ -50,6 +55,11 @@
 
 .selectButton:hover{
     -fx-background-color: #810CA8;
+}
+
+.selectButton:pressed{
+    -fx-text-fill: #2D033B;
+    -fx-background-color: #F5EDCE;
 }
 
 .thisButton:hover{
