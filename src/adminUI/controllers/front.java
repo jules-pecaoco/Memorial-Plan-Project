@@ -11,6 +11,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
 import java.sql.Connection;
@@ -47,6 +48,7 @@ public class front {
 
             stage = (Stage)((Node)e.getSource()).getScene().getWindow();
             scene = new Scene(root);
+            scene.setFill(Color.TRANSPARENT);
             stage.setScene(scene);
             stage.show();
         }catch (Exception ex){
@@ -83,7 +85,6 @@ public class front {
 
                     plan call = loader.getController();
                     call.setWelcomeLabel(getName());
-
                     stage = (Stage)((Node)e.getSource()).getScene().getWindow();
                     scene = new Scene(root);
                     stage.setScene(scene);

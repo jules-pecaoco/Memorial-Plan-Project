@@ -14,14 +14,13 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import userUI.model.Plan;
 
 import java.net.URL;
 import java.util.ResourceBundle;
 import userUI.main.*;
-
-import javax.swing.*;
 
 public class market implements Initializable{
 
@@ -182,7 +181,7 @@ public class market implements Initializable{
         try {
             root = FXMLLoader.load(getClass().getResource("/userUI/fxmls/home.fxml"));
             scene = new Scene(root);
-
+            scene.setFill(Color.TRANSPARENT);
             stage = (Stage) ((Node)e.getSource()).getScene().getWindow();
             stage.setScene(scene);
         }catch (Exception ex){
@@ -200,10 +199,10 @@ public class market implements Initializable{
                 root = loader.load();
 
                 payment setID  = loader.getController();
-                setID.setID(selectedPlan);
-
-                stage = (Stage)((Node)e.getSource()).getScene().getWindow();
+                setID.setPlan(selectedPlan);
                 scene = new Scene(root);
+                stage = (Stage)((Node)e.getSource()).getScene().getWindow();
+                scene.setFill(Color.TRANSPARENT);
                 stage.setScene(scene);
                 stage.show();
             }catch (Exception ex){

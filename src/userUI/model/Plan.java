@@ -20,14 +20,6 @@ public class Plan {
 
 
 
-
-
-
-
-
-
-
-
     public void setID(int idPromoPlan){
         this.idPromoPlan=idPromoPlan;
     }
@@ -181,5 +173,26 @@ public class Plan {
     }
 
 
+
+    String payment;
+    public void setPayment(String payment){
+        this.payment = payment;
+    }
+
+    public String getPayment(){
+        return payment;
+    }
+
+
+
+    int change;
+
+    public void setChange(int change) {
+        this.change = change;
+    }
+
+    public int getChange() {
+        return change;
+    }
 
 }

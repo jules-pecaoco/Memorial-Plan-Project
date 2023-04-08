@@ -8,18 +8,17 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import userUI.model.Plan;
 
 import userUI.main.mainUser;
 
-import java.nio.file.Watchable;
 
 
 public class payment {
@@ -78,8 +77,6 @@ public class payment {
     @FXML
     private Label priceFour;
 
-    @FXML
-    private ScrollPane scroll;
 
     @FXML
     private Button selectButton;
@@ -120,22 +117,23 @@ public class payment {
     Stage stage;
     Scene scene;
 
-    int ID;
     Plan plan;
 
 
 
-    public void setID(Plan plan){
+    public void setPlan(Plan plan){
         this.plan = plan;
         selectedPlan.setText(plan.getCategoryName());
         selectedPrice.setText(mainUser.Currency+plan.getSellingPrice());
+        plan.setSpotDiscount(15);
         toSpotCashCard();
+        toSpotUpdate();
+
     }
 
 
 
     public void setPaymentCard(MouseEvent e){
-
         if(e.getSource()==oneBox){
             plan.setSpotDiscount(15);
             toSpotCashCard();
@@ -146,24 +144,29 @@ public class payment {
             toSpotCashCard();
             toSpotUpdate();
 
-
         }else if(e.getSource()==threeBox){
             plan.setSpotDiscount(5);
             toSpotCashCard();
             toSpotUpdate();
 
         }else {
-            toInstallmentCard();
+            try{
+                toInstallmentCard();
+            }catch (Exception ex){
+                warningLabel.setText("Already in Installment");;
+            }
 
         }
     }
 
     public void toSpotUpdate(){
+        warningLabel.setText(null);
         interestorOffLabel.setText(plan.getSpotDiscount()+"%");
         contractOrSellPriceLabel.setText(mainUser.Currency+plan.getSpotPrice());
     }
 
     public void toSpotCashCard(){
+        plan.setPayment("Spot Cash");
         downOrAmountField.setText(null);
         contracOrSellPrice.setText("Selling Price:");
         interestOrOffTitle.setText("Discount:");
@@ -176,6 +179,7 @@ public class payment {
     }
 
     public void toInstallmentCard(){
+        plan.setPayment("Installment");
         downOrAmountField.setText(null);
         interestorOffLabel.setText(null);
         contractOrSellPriceLabel.setText(null);
@@ -207,6 +211,8 @@ public class payment {
                     }else {
                         warningLabel.setText(null);
                         int change = amount - dis;
+                        plan.setChange(change);
+                        plan.setDownPayment(amount);
                         monthlyOrChangeLabel.setText(mainUser.Currency+change);
                     }
 
@@ -249,11 +255,55 @@ public class payment {
             root = loader.load();
             stage = (Stage)((Node)e.getSource()).getScene().getWindow();
             scene = new Scene(root);
+            scene.setFill(Color.TRANSPARENT);
             stage.setScene(scene);
             stage.show();
         }catch (Exception ex){
             ex.printStackTrace();
         }
+    }
+
+    public boolean toCheckPayment(){
+        try{
+            if(paymentTitle.getText().equals("Spot Cash")){
+                if(downOrAmountField.getText().isBlank()||monthlyOrChangeLabel.getText().isBlank()){
+                    return false;
+                }else {
+                    return true;
+                }
+            }else {
+                if(downOrAmountField.getText().isBlank()&&yearField.getText().isBlank()&&monthlyOrChangeLabel.getText().isBlank()){
+                    return false;
+                }else {
+                    return true;
+                }
+            }
+        }catch (Exception e){
+            warningLabel.setText("A Field is Blank");
+        }
+        return false;
+    }
+    public void toReceipt(ActionEvent e){
+        if(!toCheckPayment()){
+            warningLabel.setText("Please Input Field");
+        }else {
+            try{
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/userUI/fxmls/receipt.fxml"));
+                root = loader.load();
+
+                receipt setReceipt = loader.getController();
+                setReceipt.setPlan(plan);
+
+                stage = (Stage)((Node)e.getSource()).getScene().getWindow();
+                scene = new Scene(root);
+                scene.setFill(Color.TRANSPARENT);
+                stage.setScene(scene);
+                stage.show();
+            }catch (Exception ex){
+                ex.printStackTrace();
+            }
+        }
+
     }
 
 

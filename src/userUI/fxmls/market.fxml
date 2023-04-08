@@ -4,16 +4,18 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="userUI.controllers.market">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="700.0" styleClass="roundcorner" stylesheets="@../main/style.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="userUI.controllers.market">
    <left>
-      <VBox prefHeight="500.0" prefWidth="236.0" styleClass="violet" stylesheets="@../main/style.css" BorderPane.alignment="CENTER">
+      <VBox prefHeight="500.0" prefWidth="236.0" stylesheets="@../main/style.css" BorderPane.alignment="CENTER">
          <children>
             <Label contentDisplay="CENTER" prefHeight="47.0" prefWidth="110.0" styleClass="selectPlan" stylesheets="@../main/style.css" text="Select Plan" textAlignment="CENTER" VBox.vgrow="ALWAYS">
                <VBox.margin>
@@ -130,127 +132,166 @@
                         </Button>
                      </children>
                   </HBox>
+                  <HBox alignment="CENTER" prefHeight="83.0" prefWidth="213.0">
+                     <children>
+                        <ImageView fitHeight="94.0" fitWidth="153.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../images/Santong%20Kabaong%20(3).png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                     <effect>
+                        <Glow />
+                     </effect>
+                  </HBox>
                </children>
             </VBox>
          </children>
+         <styleClass>
+            <String fx:value="violet" />
+            <String fx:value="leftround" />
+         </styleClass>
       </VBox>
    </left>
    <center>
-      <HBox prefHeight="100.0" prefWidth="200.0" styleClass="backScroll" stylesheets="@../main/style.css" BorderPane.alignment="CENTER">
+      <HBox prefHeight="100.0" prefWidth="200.0" stylesheets="@../main/style.css" BorderPane.alignment="CENTER">
          <children>
-            <ScrollPane fx:id="scroll" prefHeight="456.0" prefWidth="464.0" styleClass="transparent">
-               <HBox.margin>
-                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-               </HBox.margin>
-               <content>
-                  <AnchorPane prefHeight="485.0" prefWidth="448.0" styleClass="transparent">
+            <AnchorPane prefHeight="485.0" prefWidth="448.0">
+               <children>
+                  <ImageView fitHeight="374.0" fitWidth="383.0" layoutX="68.0" layoutY="120.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../images/flower%20(2).png" />
+                     </image>
+                  </ImageView>
+                  <AnchorPane fx:id="oneBox" layoutX="38.0" layoutY="66.0" onMouseClicked="#getButtonChoose" prefHeight="89.0" prefWidth="173.0">
                      <children>
-                        <AnchorPane fx:id="oneBox" layoutX="38.0" layoutY="33.0" onMouseClicked="#getButtonChoose" prefHeight="89.0" prefWidth="173.0">
-                           <children>
-                              <Label fx:id="nameOne" alignment="CENTER" layoutX="4.0" layoutY="14.0" prefHeight="23.0" prefWidth="164.0" styleClass="beige" text="Regular">
-                                 <font>
-                                    <Font name="Times New Roman" size="20.0" />
-                                 </font>
-                              </Label>
-                              <Label fx:id="priceOne" layoutX="59.0" layoutY="45.0" styleClass="beige" text="₱16560">
-                                 <font>
-                                    <Font name="Times New Roman" size="20.0" />
-                                 </font>
-                              </Label>
-                           </children>
-                           <styleClass>
-                              <String fx:value="violet" />
-                              <String fx:value="shadow" />
-                              <String fx:value="thisButton" />
-                              <String fx:value="roundcorner" />
-                           </styleClass>
-                        </AnchorPane>
-                        <AnchorPane fx:id="twoBox" layoutX="237.0" layoutY="33.0" onMouseClicked="#getButtonChoose" prefHeight="89.0" prefWidth="173.0">
-                           <children>
-                              <Label fx:id="nameTwo" alignment="CENTER" layoutX="3.0" layoutY="14.0" prefHeight="23.0" prefWidth="166.0" styleClass="beige" text="Inner Walk">
-                                 <font>
-                                    <Font name="Times New Roman" size="20.0" />
-                                 </font>
-                              </Label>
-                              <Label fx:id="priceTwo" layoutX="59.0" layoutY="45.0" styleClass="beige" text="₱20256">
-                                 <font>
-                                    <Font name="Times New Roman" size="20.0" />
-                                 </font>
-                              </Label>
-                           </children>
-                           <styleClass>
-                              <String fx:value="violet" />
-                              <String fx:value="shadow" />
-                              <String fx:value="thisButton" />
-                              <String fx:value="roundcorner" />
-                           </styleClass>
-                        </AnchorPane>
-                        <AnchorPane fx:id="threeBox" layoutX="38.0" layoutY="159.0" onMouseClicked="#getButtonChoose" prefHeight="89.0" prefWidth="173.0">
-                           <children>
-                              <Label fx:id="nameThree" alignment="CENTER" layoutX="3.0" layoutY="14.0" prefHeight="23.0" prefWidth="167.0" styleClass="beige" text="Walk">
-                                 <font>
-                                    <Font name="Times New Roman" size="20.0" />
-                                 </font>
-                              </Label>
-                              <Label fx:id="priceThree" layoutX="56.0" layoutY="45.0" styleClass="beige" text="₱22104">
-                                 <font>
-                                    <Font name="Times New Roman" size="20.0" />
-                                 </font>
-                              </Label>
-                           </children>
-                           <styleClass>
-                              <String fx:value="violet" />
-                              <String fx:value="shadow" />
-                              <String fx:value="thisButton" />
-                              <String fx:value="roundcorner" />
-                           </styleClass>
-                        </AnchorPane>
-                        <AnchorPane fx:id="fourBox" layoutX="237.0" layoutY="159.0" onMouseClicked="#getButtonChoose" prefHeight="89.0" prefWidth="173.0">
-                           <children>
-                              <Label fx:id="nameFour" alignment="CENTER" layoutX="4.0" layoutY="14.0" prefHeight="23.0" prefWidth="164.0" styleClass="beige" text="Inner Drive">
-                                 <font>
-                                    <Font name="Times New Roman" size="20.0" />
-                                 </font>
-                              </Label>
-                              <Label fx:id="priceFour" layoutX="56.0" layoutY="45.0" styleClass="beige" text="₱22104">
-                                 <font>
-                                    <Font name="Times New Roman" size="20.0" />
-                                 </font>
-                              </Label>
-                           </children>
-                           <styleClass>
-                              <String fx:value="violet" />
-                              <String fx:value="shadow" />
-                              <String fx:value="thisButton" />
-                              <String fx:value="roundcorner" />
-                           </styleClass>
-                        </AnchorPane>
-                        <AnchorPane fx:id="fiveBox" layoutX="38.0" layoutY="286.0" onMouseClicked="#getButtonChoose" prefHeight="89.0" prefWidth="173.0">
-                           <children>
-                              <Label fx:id="nameFive" alignment="CENTER" layoutX="4.0" layoutY="14.0" prefHeight="23.0" prefWidth="166.0" styleClass="beige" text="Drive">
-                                 <font>
-                                    <Font name="Times New Roman" size="20.0" />
-                                 </font>
-                              </Label>
-                              <Label fx:id="priceFive" layoutX="57.0" layoutY="45.0" styleClass="beige" text="₱23800">
-                                 <font>
-                                    <Font name="Times New Roman" size="20.0" />
-                                 </font>
-                              </Label>
-                           </children>
-                           <styleClass>
-                              <String fx:value="violet" />
-                              <String fx:value="shadow" />
-                              <String fx:value="thisButton" />
-                              <String fx:value="roundcorner" />
-                           </styleClass>
-                        </AnchorPane>
-                        <Button layoutX="298.0" layoutY="318.0" mnemonicParsing="false" onAction="#toFront" text="Back" />
+                        <Label fx:id="nameOne" alignment="CENTER" layoutX="4.0" layoutY="14.0" prefHeight="23.0" prefWidth="164.0" styleClass="beige" text="Regular">
+                           <font>
+                              <Font name="Times New Roman" size="20.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="priceOne" layoutX="59.0" layoutY="45.0" styleClass="beige" text="₱16560">
+                           <font>
+                              <Font name="Times New Roman" size="20.0" />
+                           </font>
+                        </Label>
                      </children>
+                     <styleClass>
+                        <String fx:value="violet" />
+                        <String fx:value="shadow" />
+                        <String fx:value="thisButton" />
+                        <String fx:value="roundcorner" />
+                     </styleClass>
                   </AnchorPane>
-               </content>
-            </ScrollPane>
+                  <AnchorPane fx:id="twoBox" layoutX="237.0" layoutY="66.0" onMouseClicked="#getButtonChoose" prefHeight="89.0" prefWidth="173.0">
+                     <children>
+                        <Label fx:id="nameTwo" alignment="CENTER" layoutX="3.0" layoutY="14.0" prefHeight="23.0" prefWidth="166.0" styleClass="beige" text="Inner Walk">
+                           <font>
+                              <Font name="Times New Roman" size="20.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="priceTwo" layoutX="59.0" layoutY="45.0" styleClass="beige" text="₱20256">
+                           <font>
+                              <Font name="Times New Roman" size="20.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <styleClass>
+                        <String fx:value="violet" />
+                        <String fx:value="shadow" />
+                        <String fx:value="thisButton" />
+                        <String fx:value="roundcorner" />
+                     </styleClass>
+                  </AnchorPane>
+                  <AnchorPane fx:id="threeBox" layoutX="38.0" layoutY="192.0" onMouseClicked="#getButtonChoose" prefHeight="89.0" prefWidth="173.0">
+                     <children>
+                        <Label fx:id="nameThree" alignment="CENTER" layoutX="3.0" layoutY="14.0" prefHeight="23.0" prefWidth="167.0" styleClass="beige" text="Walk">
+                           <font>
+                              <Font name="Times New Roman" size="20.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="priceThree" layoutX="56.0" layoutY="45.0" styleClass="beige" text="₱22104">
+                           <font>
+                              <Font name="Times New Roman" size="20.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <styleClass>
+                        <String fx:value="violet" />
+                        <String fx:value="shadow" />
+                        <String fx:value="thisButton" />
+                        <String fx:value="roundcorner" />
+                     </styleClass>
+                  </AnchorPane>
+                  <AnchorPane fx:id="fourBox" layoutX="237.0" layoutY="192.0" onMouseClicked="#getButtonChoose" prefHeight="89.0" prefWidth="173.0">
+                     <children>
+                        <Label fx:id="nameFour" alignment="CENTER" layoutX="4.0" layoutY="14.0" prefHeight="23.0" prefWidth="164.0" styleClass="beige" text="Inner Drive">
+                           <font>
+                              <Font name="Times New Roman" size="20.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="priceFour" layoutX="56.0" layoutY="45.0" styleClass="beige" text="₱22104">
+                           <font>
+                              <Font name="Times New Roman" size="20.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <styleClass>
+                        <String fx:value="violet" />
+                        <String fx:value="shadow" />
+                        <String fx:value="thisButton" />
+                        <String fx:value="roundcorner" />
+                     </styleClass>
+                  </AnchorPane>
+                  <AnchorPane fx:id="fiveBox" layoutX="38.0" layoutY="319.0" onMouseClicked="#getButtonChoose" prefHeight="89.0" prefWidth="173.0">
+                     <children>
+                        <Label fx:id="nameFive" alignment="CENTER" layoutX="4.0" layoutY="14.0" prefHeight="23.0" prefWidth="166.0" styleClass="beige" text="Drive">
+                           <font>
+                              <Font name="Times New Roman" size="20.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="priceFive" layoutX="57.0" layoutY="45.0" styleClass="beige" text="₱23800">
+                           <font>
+                              <Font name="Times New Roman" size="20.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <styleClass>
+                        <String fx:value="violet" />
+                        <String fx:value="shadow" />
+                        <String fx:value="thisButton" />
+                        <String fx:value="roundcorner" />
+                     </styleClass>
+                  </AnchorPane>
+                  <Button layoutX="300.0" layoutY="343.0" mnemonicParsing="false" onAction="#toFront">
+                     <graphic>
+                        <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" styleClass="realtrans">
+                           <image>
+                              <Image url="@../../images/gray.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <styleClass>
+                        <String fx:value="realtrans" />
+                        <String fx:value="beigeHover" />
+                        <String fx:value="roundcorner" />
+                     </styleClass></Button>
+                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="169.0" layoutY="7.0" prefHeight="47.0" prefWidth="110.0" styleClass="selectPlan" stylesheets="@../main/style.css" text="Plans" textAlignment="CENTER">
+                     <font>
+                        <Font name="Times New Roman" size="20.0" />
+                     </font>
+                  </Label>
+               </children>
+               <styleClass>
+                  <String fx:value="transparent" />
+                  <String fx:value="rightround" />
+               </styleClass>
+            </AnchorPane>
          </children>
+         <styleClass>
+            <String fx:value="backScroll" />
+            <String fx:value="rightround" />
+         </styleClass>
       </HBox>
    </center>
 </BorderPane>

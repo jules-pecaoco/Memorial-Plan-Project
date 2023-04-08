@@ -2,10 +2,24 @@
     -fx-background-color: #2D033B;
 }
 
+.beigeHover: hover{
+    -fx-background-color: #F5EDCE;
+}
+
+
 .text-field{
   -fx-background-color: transparent;
   -fx-border-color: transparent transparent #2D033B transparent;
 }
+.text-fieldBiege{
+  -fx-background-color: transparent;
+  -fx-border-color: transparent transparent #F5EDCE transparent;
+}
+
+.text-fillBeige{
+    -fx-text-fill: #F5EDCE;
+}
+
 
 .beigeButton{
     -fx-background-color: #F5EDCE;
@@ -19,6 +33,15 @@
     -fx-background-radius:25;
 }
 
+.leftround{
+    -fx-background-radius:25 0 0 25 ;
+}
+
+.rightround{
+    -fx-background-radius:0 25 25 0 ;
+}
+
+
 .circle{
     -fx-background-radius:2100;
 }
@@ -27,9 +50,16 @@
     -fx-effect: dropShadow(three-pass-box,rgba(0,0,0,0.2), 0.0 , 0.0 , 5 ,5);
 }
 
+
 .transparent{
     -fx-background-color: #E5B8F4;
 }
+
+.realtrans{
+    -fx-background-color: Transparent;
+
+}
+
 
 .selectPlan{
     -fx-background-color: #F5EDCE;
