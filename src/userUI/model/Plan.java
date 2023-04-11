@@ -17,9 +17,6 @@ public class Plan {
 
     int idPromoPlan;
 
-
-
-
     public void setID(int idPromoPlan){
         this.idPromoPlan=idPromoPlan;
     }
